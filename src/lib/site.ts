@@ -1,17 +1,14 @@
 export const site = {
   name: "Enhancify",
   legalName: "Enhancify Private Limited",
-  tagline: "The company behind EnhanceTube",
+  tagline: "An Indian software company",
   description:
-    "Enhancify is an Indian software company. We build EnhanceTube, a YouTube workspace for creators.",
+    "Enhancify is an Indian software company. We design and ship products that help people improve how they create and grow online.",
   url: "https://enhancify.in",
-  productName: "EnhanceTube",
-  productUrl: "https://enhancetube.com",
   email: {
     sales: "sales@enhancify.in",
     support: "support@enhancify.in",
   },
-  city: "Bengaluru",
   country: "India",
 } as const;
 

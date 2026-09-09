@@ -21,10 +21,8 @@ export function ContactForm() {
       <div className="rounded-2xl bg-mist p-8 ring-1 ring-line">
         <p className="text-xl font-semibold text-ink">Received.</p>
         <p className="mt-2 text-sm leading-6 text-muted">
-          <p className="mt-2 text-sm leading-6 text-muted">
-            We typically reply within one business day at {site.email.support} or{" "}
-            {site.email.sales}.
-          </p>
+          We typically reply within one business day at {site.email.support} or{" "}
+          {site.email.sales}.
         </p>
       </div>
     );
@@ -42,7 +40,7 @@ export function ContactForm() {
           <input name="email" type="email" required autoComplete="email" className={field} />
         </label>
         <label className="text-sm font-medium text-ink sm:col-span-2">
-          Channel or company
+          Company
           <input name="company" autoComplete="organization" className={field} />
         </label>
         <label className="text-sm font-medium text-ink sm:col-span-2">

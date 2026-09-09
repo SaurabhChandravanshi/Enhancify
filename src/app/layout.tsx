@@ -7,24 +7,24 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Enhancify — The company behind EnhanceTube",
+    default: "Enhancify — An Indian software company",
     template: "%s · Enhancify",
   },
   description: site.description,
   applicationName: site.name,
-  keywords: ["Enhancify", "EnhanceTube", "YouTube", "Indian SaaS", "Bengaluru"],
+  keywords: ["Enhancify", "software company", "India", "SaaS"],
   authors: [{ name: site.legalName }],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: site.url,
     siteName: site.name,
-    title: "Enhancify — The company behind EnhanceTube",
+    title: "Enhancify — An Indian software company",
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enhancify — The company behind EnhanceTube",
+    title: "Enhancify — An Indian software company",
     description: site.description,
   },
 };

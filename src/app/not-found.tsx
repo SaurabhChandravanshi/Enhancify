@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">404</p>
         <h1 className="mt-4 max-w-lg text-4xl font-semibold tracking-tight">
-          This page is not in the workspace.
+          That page does not exist.
         </h1>
         <p className="mt-4 max-w-md text-muted">
           The link is stale, or the route never existed. Head home or write to us.

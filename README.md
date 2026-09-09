@@ -1,6 +1,8 @@
 # Enhancify
 
-Company site for [Enhancify Private Limited](https://enhancify.in), the Indian software company behind [EnhanceTube](https://enhancetube.com).
+Company website for Enhancify Private Limited — an Indian software company.
+
+Site: [enhancify.in](https://enhancify.in)
 
 ## Local
 
