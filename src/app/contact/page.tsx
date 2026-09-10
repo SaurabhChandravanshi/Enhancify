@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import { contactNeeds } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Sales and support for Enhancify Private Limited.",
+  description:
+    "Sales, support, website, and application enquiries for Enhancify Private Limited.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ need?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const raw = params.need;
+  const need = Array.isArray(raw) ? raw[0] : raw;
+  const defaultNeed: string =
+    typeof need === "string" && contactNeeds.some((item) => item.value === need)
+      ? need
+      : "";
+
   return (
     <div className="px-5 py-16 sm:px-6 lg:py-24">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.85fr_1.15fr]">
@@ -19,8 +33,8 @@ export default function ContactPage() {
             Talk to the company.
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted">
-            There is no account on this site. Use the form or email. A person
-            replies.
+            Website work, application work, partnerships, or a question. There
+            is no account on this site. Use the form or email. A person replies.
           </p>
           <dl className="mt-10 space-y-4 text-sm">
             <div>
@@ -45,7 +59,7 @@ export default function ContactPage() {
             </div>
           </dl>
         </div>
-        <ContactForm />
+        <ContactForm defaultNeed={defaultNeed} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/button-link";
 import { ContactForm } from "@/components/contact-form";
 import { HeroPanel } from "@/components/hero-panel";
+import { OfferCards } from "@/components/offer-cards";
 import { pillars, practices } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -15,16 +16,17 @@ export default function Home() {
               Software company · {site.country}
             </p>
             <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-[-0.045em] text-balance sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]">
-              We build software that makes performance obvious.
+              We build websites and applications that make the next step obvious.
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-8 text-muted">
-              Enhancify designs products for people who create and grow in public.
-              Less vanity reporting. More of a next step you can actually take.
+              Enhancify designs sites and software for people who create and
+              grow in public. Less vanity reporting. More of a next step you can
+              actually take.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">Talk to us</ButtonLink>
-              <ButtonLink href="/about" variant="secondary">
-                About the company
+              <ButtonLink href="#offer" variant="secondary">
+                What we offer
               </ButtonLink>
             </div>
           </div>
@@ -48,7 +50,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-fog px-5 py-20 sm:px-6 lg:py-24">
+      <section id="offer" className="scroll-mt-24 bg-fog px-5 py-20 sm:px-6 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-balance">
+            What we offer
+          </h2>
+          <p className="mt-4 max-w-xl text-muted leading-7">
+            Websites and applications. Company sites, product pages, rebuilds,
+            and custom software. Website projects include contact, SEO,
+            analytics, and care after launch.
+          </p>
+          <OfferCards />
+        </div>
+      </section>
+
+      <section className="px-5 py-20 sm:px-6 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-semibold tracking-tight">The company, plainly</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -67,8 +83,8 @@ export default function Home() {
           <div>
             <h2 className="text-3xl font-semibold tracking-tight">Write to Enhancify</h2>
             <p className="mt-4 text-muted">
-              Partnerships, press, or a question for the team. Sales and support
-              both read this inbox.
+              Website work, application work, partnerships, or a question. Sales
+              and support both read this inbox.
             </p>
           </div>
           <ContactForm />

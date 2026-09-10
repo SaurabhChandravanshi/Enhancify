@@ -25,17 +25,19 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium tracking-tight transition ${
-                pathname === item.href ? "text-ink" : "text-muted hover:text-ink"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav
+            .filter((item) => item.href !== "/contact")
+            .map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium tracking-tight transition ${
+                  pathname === item.href ? "text-ink" : "text-muted hover:text-ink"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
         </nav>
 
         <div className="hidden items-center md:flex">
@@ -69,16 +71,18 @@ export function SiteHeader() {
       {open ? (
         <div id="mobile-nav" className="border-t border-line bg-canvas px-5 py-4 md:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-mist"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {nav
+              .filter((item) => item.href !== "/contact")
+              .map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-mist"
+                >
+                  {item.label}
+                </Link>
+              ))}
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

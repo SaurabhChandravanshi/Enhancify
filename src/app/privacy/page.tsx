@@ -21,7 +21,9 @@ export default function PrivacyPage() {
           </p>
           <h2 className="text-lg font-semibold text-ink">What we collect</h2>
           <p>
-            If you write to us: name, email, company, and your message. We also
+            If you write to us: name, email, company, what you need, and your
+            message. That enquiry is emailed to {site.email.sales}. We do not
+            keep a separate database of form submissions on this site. We also
             collect standard website logs (pages, device, approximate location).
           </p>
           <h2 className="text-lg font-semibold text-ink">How we use it</h2>

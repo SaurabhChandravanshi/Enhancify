@@ -12,7 +12,14 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
-  keywords: ["Enhancify", "software company", "India", "SaaS"],
+  keywords: [
+    "Enhancify",
+    "software company",
+    "India",
+    "web development",
+    "company websites",
+    "web applications",
+  ],
   authors: [{ name: site.legalName }],
   openGraph: {
     type: "website",

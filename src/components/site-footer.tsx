@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import { workOffers } from "@/lib/content";
 import { nav, site } from "@/lib/site";
 
 const legal = [
@@ -16,7 +17,7 @@ export function SiteFooter() {
             <Logo />
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-6 text-muted">
-            We build software that turns noisy data into a clear next step.
+            We build websites and applications that make the next step obvious.
           </p>
         </div>
         <div className="md:col-span-2">
@@ -40,7 +41,24 @@ export function SiteFooter() {
             ))}
           </ul>
         </div>
-        <div className="md:col-span-5">
+        <div className="md:col-span-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+            Work
+          </p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {workOffers.map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={item.href}
+                  className="text-ink/80 hover:text-ink"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="md:col-span-2">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
             Email
           </p>

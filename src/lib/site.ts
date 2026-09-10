@@ -3,7 +3,7 @@ export const site = {
   legalName: "Enhancify Private Limited",
   tagline: "An Indian software company",
   description:
-    "Enhancify is an Indian software company. We design and ship products that help people improve how they create and grow online.",
+    "Enhancify is an Indian software company. We design and ship websites and applications that make the next step obvious.",
   url: "https://enhancify.in",
   email: {
     sales: "sales@enhancify.in",
@@ -13,6 +13,8 @@ export const site = {
 } as const;
 
 export const nav = [
+  { href: "/websites", label: "Websites" },
+  { href: "/applications", label: "Applications" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;

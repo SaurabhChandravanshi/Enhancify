@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
 import { BrandMark } from "@/components/brand-mark";
+import { OfferCards } from "@/components/offer-cards";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Enhancify is an Indian software company. We build products that make performance obvious.",
+    "Enhancify is an Indian software company. We design and ship websites and applications that make the next step obvious.",
 };
 
 const values = [
@@ -47,8 +48,8 @@ export default function AboutPage() {
           <div className="space-y-5 text-base leading-8 text-muted">
             <p>
               Enhancify is a software company from {site.country}. We design
-              products for people who create in public — and who are tired of
-              being told everything except what to do next.
+              websites and applications for people who create in public — and
+              who are tired of being told everything except what to do next.
             </p>
             <p>
               Numbers arrive late. Advice is cheap. The useful thing is a clear
@@ -57,9 +58,11 @@ export default function AboutPage() {
               build.
             </p>
             <p>
-              We are a small team. We like finished software more than a long
-              list of features. When you write to us, you reach the people who
-              actually make the product.
+              We are a small team. We like finished work more than a long list
+              of features. We design and ship company websites, product and
+              marketing sites, rebuilds, and applications. Website projects
+              include contact, SEO, analytics, and care after launch. When you
+              write to us, you reach the people who actually make the work.
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm lg:mx-0">
@@ -69,6 +72,17 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-line bg-paper px-5 py-20 sm:px-6 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-3xl font-semibold tracking-tight">What we offer</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            Websites and applications. Company sites, product pages, rebuilds,
+            and custom software.
+          </p>
+          <OfferCards variant="rule" />
+        </div>
+      </section>
+
+      <section className="px-5 py-20 sm:px-6 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-semibold tracking-tight">What we hold to</h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">
