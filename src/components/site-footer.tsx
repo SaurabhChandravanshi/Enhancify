@@ -78,7 +78,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-line">
         <p className="mx-auto max-w-6xl px-5 py-5 text-xs text-muted sm:px-6">
-          © {new Date().getFullYear()} {site.name}. Made in India.
+          © {new Date().getFullYear()} {site.name}.
         </p>
       </div>
     </footer>

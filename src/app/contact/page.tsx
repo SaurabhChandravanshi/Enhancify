@@ -6,7 +6,14 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Sales, support, website, and application enquiries for Enhancify Private Limited.",
+    "Start a website or application enquiry with Enhancify. A person on the team replies.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact · Enhancify",
+    description:
+      "Start a website or application enquiry with Enhancify. A person on the team replies.",
+    url: "/contact",
+  },
 };
 
 export default async function ContactPage({
@@ -52,10 +59,6 @@ export default async function ContactPage({
                   {site.email.support}
                 </a>
               </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-ink">Location</dt>
-              <dd className="text-muted">{site.country}</dd>
             </div>
           </dl>
         </div>

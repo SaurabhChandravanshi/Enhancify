@@ -10,9 +10,16 @@ import {
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Websites",
+  title: "Website design and development",
   description:
-    "Company websites, product sites, and rebuilds — with contact, SEO, analytics, and care after launch.",
+    "Company websites, product sites, and rebuilds — each with contact, SEO, analytics, and care after launch.",
+  alternates: { canonical: "/websites" },
+  openGraph: {
+    title: "Website design and development · Enhancify",
+    description:
+      "Company websites, product sites, and rebuilds — each with contact, SEO, analytics, and care after launch.",
+    url: "/websites",
+  },
 };
 
 export default function WebsitesPage() {
@@ -111,28 +118,6 @@ export default function WebsitesPage() {
                 <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-fog px-5 py-20 sm:px-6 lg:py-24">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight">A good fit</h2>
-            <p className="mt-4 text-muted leading-8">
-              Founders, consultants, and small product teams who need a serious
-              public site — not a template farm, and not a forty-page agency
-              process. If you already know the job (a company site, a product
-              page, or a rebuild), we can start.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight">Not a fit</h2>
-            <p className="mt-4 text-muted leading-8">
-              We do not sell logo packages, ad retainers, or “we do WordPress
-              and everything else.” If the brief is a full marketplace, an ERP,
-              or ongoing ads, we will say so and point you elsewhere.
-            </p>
           </div>
         </div>
       </section>

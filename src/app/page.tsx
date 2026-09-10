@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
 import { ContactForm } from "@/components/contact-form";
 import { HeroPanel } from "@/components/hero-panel";
 import { OfferCards } from "@/components/offer-cards";
 import { pillars, practices } from "@/lib/content";
-import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  description:
+    "Enhancify designs and ships company websites, product sites, rebuilds, and web applications — clear, fast, and easy to act on.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
@@ -12,10 +18,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_circle_at_85%_-20%,rgba(76,70,232,0.14),transparent_55%)]" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              Software company · {site.country}
-            </p>
-            <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-[-0.045em] text-balance sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]">
+            <h1 className="max-w-xl text-4xl font-semibold tracking-[-0.045em] text-balance sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]">
               We build websites and applications that make the next step obvious.
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-8 text-muted">
@@ -30,7 +33,9 @@ export default function Home() {
               </ButtonLink>
             </div>
           </div>
-          <HeroPanel />
+          <div className="hidden lg:block">
+            <HeroPanel />
+          </div>
         </div>
       </section>
 

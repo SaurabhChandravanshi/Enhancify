@@ -5,9 +5,16 @@ import { IncludeList } from "@/components/include-list";
 import { applicationOffer, websiteSteps } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Applications",
+  title: "Web application development",
   description:
-    "Custom applications from Enhancify — flows, build, launch, analytics, and care after launch.",
+    "Custom web applications from Enhancify — flows, build, launch, analytics, and care after launch.",
+  alternates: { canonical: "/applications" },
+  openGraph: {
+    title: "Web application development · Enhancify",
+    description:
+      "Custom web applications from Enhancify — flows, build, launch, analytics, and care after launch.",
+    url: "/applications",
+  },
 };
 
 export default function ApplicationsPage() {
@@ -76,28 +83,6 @@ export default function ApplicationsPage() {
                 <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 py-20 sm:px-6 lg:py-24">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight">A good fit</h2>
-            <p className="mt-4 text-muted leading-8">
-              Founders and small teams who need a web application — something
-              people log into and use — not a brochure and not a forty-page
-              agency process. If you can describe the job the software should
-              do, we can start.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight">Not a fit</h2>
-            <p className="mt-4 text-muted leading-8">
-              We build web applications. We do not take on native app-store
-              products, ERP, or a full marketplace as a first project. If that
-              is the brief, we will say so.
-            </p>
           </div>
         </div>
       </section>

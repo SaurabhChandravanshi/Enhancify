@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Enhancify is an Indian software company. We design and ship websites and applications that make the next step obvious.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About · Enhancify",
+    description:
+      "Enhancify is an Indian software company. We design and ship websites and applications that make the next step obvious.",
+    url: "/about",
+  },
 };
 
 const values = [
@@ -21,7 +28,7 @@ const values = [
   },
   {
     title: "Focus",
-    body: "A small company can only do a few things well. We pick those things carefully and stay with them long enough to get them right.",
+    body: "We do a few things well. We pick them carefully and stay with them long enough to get them right.",
   },
   {
     title: "Pace",
@@ -58,11 +65,11 @@ export default function AboutPage() {
               build.
             </p>
             <p>
-              We are a small team. We like finished work more than a long list
-              of features. We design and ship company websites, product and
-              marketing sites, rebuilds, and applications. Website projects
-              include contact, SEO, analytics, and care after launch. When you
-              write to us, you reach the people who actually make the work.
+              We like finished work more than a long list of features. We
+              design and ship company websites, product and marketing sites,
+              rebuilds, and applications. Website projects include contact, SEO,
+              analytics, and care after launch. When you write to us, you reach
+              the people who actually make the work.
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm lg:mx-0">

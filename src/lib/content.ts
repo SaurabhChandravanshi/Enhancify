@@ -15,8 +15,8 @@ export const pillars = [
 
 export const practices = [
   {
-    title: "Small team, high bar",
-    body: "We keep the company focused. Fewer products, finished properly, rather than a catalogue of half-built tools.",
+    title: "High bar",
+    body: "We keep the company focused. Fewer things, finished properly, rather than a catalogue of half-built tools.",
   },
   {
     title: "Built in India",

@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Enhancify collects and uses information on this site.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

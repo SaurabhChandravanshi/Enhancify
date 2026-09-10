@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Terms for using the Enhancify company website.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {
