@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { contactNeeds } from "@/lib/content";
-import { site } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -57,6 +57,19 @@ export default async function ContactPage({
               <dd>
                 <a href={`mailto:${site.email.support}`} className="text-muted hover:text-ink">
                   {site.email.support}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink">WhatsApp</dt>
+              <dd>
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted hover:text-ink"
+                >
+                  {site.whatsapp.display}
                 </a>
               </dd>
             </div>

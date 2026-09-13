@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -54,6 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultTitle,
     description: site.description,
+    site: `@${site.social.x.handle}`,
+    creator: `@${site.social.x.handle}`,
   },
 };
 
@@ -72,6 +75,11 @@ const jsonLd = {
       url: site.url,
       description: site.description,
       email: site.email.sales,
+      sameAs: [
+        site.social.instagram.url,
+        site.social.facebook.url,
+        site.social.x.url,
+      ],
       areaServed: site.country,
       knowsAbout: [
         "Web development",
@@ -101,6 +109,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <WhatsAppButton />
       </body>
     </html>
   );
