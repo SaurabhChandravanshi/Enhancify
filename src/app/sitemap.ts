@@ -13,6 +13,19 @@ const routes: {
   { path: "/contact", changeFrequency: "yearly", priority: 0.6 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
+  // Per-app legal documents. Google Play requires the privacy policy URL
+  // submitted with an app to describe that specific app; we mint a fresh
+  // one per product under `/apps/<slug>/policies/*`.
+  {
+    path: "/apps/insights/policies/privacy",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    path: "/apps/insights/policies/terms",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

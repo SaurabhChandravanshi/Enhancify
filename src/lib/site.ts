@@ -28,6 +28,26 @@ export const site = {
     },
   },
   country: "India",
+  /**
+   * Per-product metadata surfaced on product-scoped routes such as
+   * `/apps/<slug>/policies/*`. Each product has its own policy documents
+   * because Google Play requires the privacy policy URL to speak specifically
+   * about the app (data types, processors, retention) — the company-wide
+   * `/privacy` page is not sufficient.
+   */
+  apps: {
+    insights: {
+      name: "Insights",
+      tagline: "Your signal, not the noise",
+      /** Android applicationId — Play Console listing */
+      androidPackage: "in.insightsapp",
+      /** iOS bundle identifier — App Store listing (when we ship) */
+      iosBundleId: "in.insightsapp",
+      contactEmail: "support@enhancify.in",
+      /** Human-readable date shown at the top of each policy document. */
+      policiesLastUpdated: "September 14, 2026",
+    },
+  },
 } as const;
 
 export const whatsappLink = (
