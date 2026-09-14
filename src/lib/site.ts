@@ -44,6 +44,13 @@ export const site = {
       /** iOS bundle identifier — App Store listing (when we ship) */
       iosBundleId: "in.insightsapp",
       contactEmail: "support@enhancify.in",
+      /**
+       * Play Store requires a dedicated URL for "Data safety → Account
+       * deletion" for any app that allows account creation. It must be
+       * accessible without signing in and must speak specifically about
+       * this app. We host it at the path below.
+       */
+      accountDeletionPath: "/apps/insights/policies/delete-account",
       /** Human-readable date shown at the top of each policy document. */
       policiesLastUpdated: "September 14, 2026",
     },

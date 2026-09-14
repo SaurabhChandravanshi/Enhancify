@@ -26,6 +26,11 @@ const routes: {
     changeFrequency: "yearly",
     priority: 0.3,
   },
+  {
+    path: "/apps/insights/policies/delete-account",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

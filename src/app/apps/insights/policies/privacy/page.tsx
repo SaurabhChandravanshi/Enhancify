@@ -71,8 +71,15 @@ export default function InsightsPrivacyPage() {
               your topics and reading history sync across devices.
             </li>
             <li>
-              You can delete your account and everything tied to it at any
-              time from within the app.
+              You can request deletion of your account and everything tied
+              to it at any time — see {" "}
+              <Link
+                href={app.accountDeletionPath}
+                className="text-ink underline"
+              >
+                Delete your account
+              </Link>
+              .
             </li>
           </ul>
 
@@ -181,10 +188,16 @@ export default function InsightsPrivacyPage() {
           <h2 className="text-lg font-semibold text-ink">How long we keep your data</h2>
           <p>
             We keep your account and everything associated with it until
-            you delete it. When you delete your account, we remove your
-            profile, saved items, reading history, and push notification
-            token within 30 days. Basic error logs age out on their own
-            after a short retention period.
+            you ask us to delete it. When you request deletion (see {" "}
+            <Link
+              href={app.accountDeletionPath}
+              className="text-ink underline"
+            >
+              Delete your account
+            </Link>
+            ), we remove your profile, saved items, reading history, and
+            push notification token within 30 days. Basic error logs age
+            out on their own after a short retention period.
           </p>
 
           <h2 className="text-lg font-semibold text-ink">Your rights</h2>

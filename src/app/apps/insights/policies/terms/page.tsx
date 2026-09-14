@@ -53,11 +53,18 @@ export default function InsightsTermsPage() {
           <h2 className="text-lg font-semibold text-ink">Accounts</h2>
           <p>
             You may use the app anonymously or with an account (Google
-            Sign-in or email/password). You are responsible for keeping your
-            credentials secure. We may suspend or terminate an account that
-            abuses the service or violates these Terms. You may delete your
-            account at any time from within the app; on request we will
-            remove associated data as described in the {" "}
+            Sign-in or email/password). You are responsible for keeping
+            your credentials secure. We may suspend or terminate an
+            account that abuses the service or violates these Terms. You
+            may request deletion of your account and associated data at
+            any time — see {" "}
+            <Link
+              href={app.accountDeletionPath}
+              className="text-ink underline"
+            >
+              Delete your account
+            </Link>
+            . Our data-handling practices are described in the {" "}
             <Link
               href="/apps/insights/policies/privacy"
               className="text-ink underline"
