@@ -78,7 +78,7 @@ export const site = {
         deleteAccount: "/account-deletion",
       },
       /** Human-readable date shown at the top of each policy document. */
-      policiesLastUpdated: "September 14, 2026",
+      policiesLastUpdated: "September 15, 2026",
     },
   },
 } as const;

@@ -63,8 +63,14 @@ export default function InsightsPrivacyPage() {
 
           <h2 className="text-lg font-semibold text-ink">The short version</h2>
           <ul className="list-disc space-y-2 pl-5">
-            <li>We show no ads.</li>
-            <li>We use no analytics or tracking services.</li>
+            <li>
+              We show ads through Google AdMob. Depending on your consent,
+              ads may use your device&rsquo;s advertising ID (see{" "}
+              <a className="text-ink underline" href="#advertising">
+                Advertising
+              </a>
+              ).
+            </li>
             <li>We never sell or rent your personal data.</li>
             <li>
               You can browse without an account. Signing in only exists so
@@ -117,8 +123,13 @@ export default function InsightsPrivacyPage() {
           <p>
             <strong>We also collect basic technical information</strong>:
             error reports and request timestamps, which we use to keep the
-            app running reliably. These are not linked to advertising and
-            are not shared with third parties for marketing.
+            app running reliably. These diagnostics are separate from
+            advertising and are not sold to third parties. Ads are handled
+            separately by Google AdMob, described under{" "}
+            <a className="text-ink underline" href="#advertising">
+              Advertising
+            </a>
+            .
           </p>
 
           <p>
@@ -141,8 +152,48 @@ export default function InsightsPrivacyPage() {
             <li>Diagnose problems and improve reliability.</li>
           </ul>
           <p>
-            We do not build advertising profiles. We do not make automated
-            decisions with legal or similarly significant effects about you.
+            We do not build advertising profiles ourselves. To show ads, our
+            advertising partner Google AdMob may use your device&rsquo;s
+            advertising ID as described under{" "}
+            <a className="text-ink underline" href="#advertising">
+              Advertising
+            </a>
+            . We do not make automated decisions with legal or similarly
+            significant effects about you.
+          </p>
+
+          <h2
+            id="advertising"
+            className="scroll-mt-24 text-lg font-semibold text-ink"
+          >
+            Advertising
+          </h2>
+          <p>
+            {app.name} shows ads through <strong>Google AdMob</strong>. To
+            deliver and measure ads, AdMob may collect and use your
+            device&rsquo;s <strong>advertising ID</strong> along with limited
+            technical information such as device type, coarse location
+            derived from your IP address, and your interactions with ads.
+            This is used to show ads, limit how often you see the same ad,
+            and measure ad performance.
+          </p>
+          <p>
+            Where the law requires it (for example in the European Economic
+            Area and the UK), we ask for your consent before showing
+            personalized ads; you can choose non-personalized ads instead.
+            You can reset or delete your advertising ID at any time in your
+            device settings (on Android: Settings → Privacy → Ads). We do
+            not share your account details, such as your name or email, with
+            advertisers. For more on how Google uses this data, see{" "}
+            <a
+              className="text-ink underline"
+              href="https://policies.google.com/technologies/ads"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google&rsquo;s advertising policy
+            </a>
+            .
           </p>
 
           <h2 className="text-lg font-semibold text-ink">News content and AI</h2>
@@ -169,6 +220,14 @@ export default function InsightsPrivacyPage() {
             <li>
               <strong>Google Sign-in</strong>: only if you choose it as a
               sign-in method.
+            </li>
+            <li>
+              <strong>Google AdMob</strong>: to show and measure ads,
+              including use of your device&rsquo;s advertising ID (see{" "}
+              <a className="text-ink underline" href="#advertising">
+                Advertising
+              </a>
+              ).
             </li>
             <li>
               <strong>OpenAI</strong>: for summarising and illustrating
