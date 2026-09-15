@@ -12,7 +12,7 @@ const app = site.apps.insights;
 export const metadata: Metadata = {
   title: `Terms of Use · ${app.name}`,
   description: `Terms that apply to your use of the ${app.name} mobile app.`,
-  alternates: { canonical: "/apps/insights/policies/terms" },
+  alternates: { canonical: app.paths.terms },
   robots: { index: true, follow: true },
 };
 
@@ -59,14 +59,14 @@ export default function InsightsTermsPage() {
             may request deletion of your account and associated data at
             any time. See {" "}
             <Link
-              href={app.accountDeletionPath}
+              href={app.paths.deleteAccount}
               className="text-ink underline"
             >
               Delete your account
             </Link>
             . Our data-handling practices are described in the {" "}
             <Link
-              href="/apps/insights/policies/privacy"
+              href={app.paths.privacy}
               className="text-ink underline"
             >
               Privacy Policy
@@ -193,7 +193,7 @@ export default function InsightsTermsPage() {
           <p>
             See also {" "}
             <Link
-              href="/apps/insights/policies/privacy"
+              href={app.paths.privacy}
               className="text-ink underline"
             >
               Privacy Policy

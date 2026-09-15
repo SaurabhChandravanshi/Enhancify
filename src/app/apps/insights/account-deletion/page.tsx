@@ -13,7 +13,7 @@ import { site } from "@/lib/site";
  *   what will be deleted, what may be retained, and the timeline.
  *
  *   The path here (`/apps/insights/account-deletion`) is referenced
- *   from `site.ts` (`app.accountDeletionPath`) so the privacy policy,
+ *   from `site.ts` (`app.paths.deleteAccount`) so the privacy policy,
  *   Play Console, and the mobile app's "Delete account" row all share
  *   a single source of truth. The old `/apps/insights/policies/…`
  *   URL is 308-redirected in `next.config.ts` so previously-submitted
@@ -32,7 +32,7 @@ const app = site.apps.insights;
 export const metadata: Metadata = {
   title: `Delete your account · ${app.name}`,
   description: `How to request deletion of your ${app.name} account and all associated data.`,
-  alternates: { canonical: app.accountDeletionPath },
+  alternates: { canonical: app.paths.deleteAccount },
   robots: { index: true, follow: true },
 };
 
@@ -137,14 +137,14 @@ export default function InsightsDeleteAccountPage() {
           <p>
             See our {" "}
             <Link
-              href="/apps/insights/policies/privacy"
+              href={app.paths.privacy}
               className="text-ink underline"
             >
               Privacy Policy
             </Link>
             {" "}and {" "}
             <Link
-              href="/apps/insights/policies/terms"
+              href={app.paths.terms}
               className="text-ink underline"
             >
               Terms of Use

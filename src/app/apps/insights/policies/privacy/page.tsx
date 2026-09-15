@@ -30,7 +30,7 @@ const app = site.apps.insights;
 export const metadata: Metadata = {
   title: `Privacy Policy · ${app.name}`,
   description: `How the ${app.name} mobile app collects, uses, and protects your information.`,
-  alternates: { canonical: "/apps/insights/policies/privacy" },
+  alternates: { canonical: app.paths.privacy },
   robots: { index: true, follow: true },
 };
 
@@ -74,7 +74,7 @@ export default function InsightsPrivacyPage() {
               You can request deletion of your account and everything tied
               to it at any time. See {" "}
               <Link
-                href={app.accountDeletionPath}
+                href={app.paths.deleteAccount}
                 className="text-ink underline"
               >
                 Delete your account
@@ -190,7 +190,7 @@ export default function InsightsPrivacyPage() {
             We keep your account and everything associated with it until
             you ask us to delete it. When you request deletion (see {" "}
             <Link
-              href={app.accountDeletionPath}
+              href={app.paths.deleteAccount}
               className="text-ink underline"
             >
               Delete your account
@@ -256,7 +256,7 @@ export default function InsightsPrivacyPage() {
           <p>
             See also {" "}
             <Link
-              href="/apps/insights/policies/terms"
+              href={app.paths.terms}
               className="text-ink underline"
             >
               Terms of Use

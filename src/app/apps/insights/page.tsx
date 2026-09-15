@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   // "bilingual", "personalised feeds", "AI-generated" — implementation
   // words that don't help someone deciding whether to install.
   description: `${app.name} is a short-news app for India. The day's important stories summarised into quick reads. Free on Google Play.`,
-  alternates: { canonical: "/apps/insights" },
+  alternates: { canonical: app.paths.home },
   robots: { index: true, follow: true },
 };
 
@@ -99,7 +99,7 @@ function Hero() {
               Get it on Google Play
             </a>
             <Link
-              href={app.helpPath}
+              href={app.paths.help}
               className="text-sm font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900"
             >
               How it works
@@ -304,7 +304,7 @@ function FinalCTA() {
             Get it on Google Play
           </a>
           <Link
-            href={app.helpPath}
+            href={app.paths.help}
             className="text-sm font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900"
           >
             Read the FAQ first

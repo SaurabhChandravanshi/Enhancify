@@ -84,7 +84,7 @@ const faqs: { q: string; a: string }[] = [
 export const metadata: Metadata = {
   title: `Help & support · ${app.name}`,
   description: `Frequently asked questions and support for the ${app.name} mobile app. Contact us directly if you can't find an answer.`,
-  alternates: { canonical: app.helpPath },
+  alternates: { canonical: app.paths.help },
   robots: { index: true, follow: true },
 };
 
@@ -138,7 +138,7 @@ export default function InsightsHelpPage() {
           <ul className="list-disc space-y-2 pl-5">
             <li>
               <Link
-                href={app.accountDeletionPath}
+                href={app.paths.deleteAccount}
                 className="text-ink underline"
               >
                 Delete your {app.name} account
@@ -146,7 +146,7 @@ export default function InsightsHelpPage() {
             </li>
             <li>
               <Link
-                href="/apps/insights/policies/privacy"
+                href={app.paths.privacy}
                 className="text-ink underline"
               >
                 Privacy Policy
@@ -154,7 +154,7 @@ export default function InsightsHelpPage() {
             </li>
             <li>
               <Link
-                href="/apps/insights/policies/terms"
+                href={app.paths.terms}
                 className="text-ink underline"
               >
                 Terms of Use
@@ -169,7 +169,7 @@ export default function InsightsHelpPage() {
             We usually reply within one business day. For account
             deletion requests, please use the {" "}
             <Link
-              href={app.accountDeletionPath}
+              href={app.paths.deleteAccount}
               className="text-ink underline"
             >
               account deletion

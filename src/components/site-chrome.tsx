@@ -1,48 +1,42 @@
-"use client";
-
-import { usePathname } from "next/navigation";
+import { headers } from "next/headers";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 /**
- * Route-aware chrome switcher rendered by the root layout.
+ * Zone-aware chrome switcher rendered by the root layout.
  *
  * Why this exists:
- *   The root `app/layout.tsx` used to render `<SiteHeader />`,
- *   `<SiteFooter />`, and `<WhatsAppButton />` unconditionally around
- *   every page. That's the right default for the Enhancify marketing
- *   site — but the per-app subtree at `/apps/<slug>/*` needs its own
- *   product branding (own header, own footer, own colors), and stacking
- *   Enhancify chrome on top of app chrome would look broken and confuse
- *   users who arrived from Play Console expecting the Insights brand.
+ *   The root `app/layout.tsx` wraps every page. That's the right default
+ *   for the Enhancify marketing site — but the per-app subtree at
+ *   `/apps/<slug>/*` (served on its own domain, e.g. `insightsapp.in`)
+ *   ships its own header/footer from a nested layout, and stacking the
+ *   Enhancify chrome on top would look broken.
+ *
+ * Why not `usePathname`:
+ *   On the app's own domain the proxy rewrites `insightsapp.in/help` →
+ *   `/apps/insights/help`, but the address bar stays `/help`, so
+ *   `usePathname()` reports `/help` and can't distinguish the zone. The
+ *   host is the real signal, and hosts are only knowable server-side.
  *
  * How it works:
- *   1. Root layout wraps its `{children}` in `<SiteChrome>`.
- *   2. This component checks the pathname at render time and:
- *      - On `/apps/insights/*` (and any future `/apps/*` subtree): renders
- *        ONLY the `<main>`, letting the per-app layout supply header/footer.
- *      - Everywhere else: renders the marketing chrome around `<main>`,
- *        identical to the previous behaviour.
- *
- * Why not Route Groups instead:
- *   Next.js Route Groups (`(marketing)`) could isolate layouts cleanly,
- *   but that would require moving 7 existing top-level route folders
- *   under a group directory — a big diff for a small architectural win.
- *   This component keeps the change surgical: one new file + one
- *   root-layout edit, no file moves.
+ *   `src/proxy.ts` tags every app-zone request (by host or by
+ *   `/apps/*` path) with an `x-app-zone: insights` header. We read it
+ *   here with `headers()` and render the marketing chrome only outside
+ *   the app zone. (Reading a header makes this render dynamic, which is
+ *   fine — the proxy already runs per request.)
  *
  * Adding a new app:
- *   Extend `hideChromePrefixes` below. Keep the list ordered by app
- *   launch date so it's obvious which slug corresponds to which product.
+ *   The proxy sets the zone header for any `/apps/*` subtree, so new
+ *   apps that follow the same convention are covered automatically.
  */
-const hideChromePrefixes = [
-  "/apps/insights", // Insights mobile app — Sept 2026
-];
-
-export function SiteChrome({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const hideChrome = hideChromePrefixes.some((p) => pathname.startsWith(p));
+export async function SiteChrome({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const zone = (await headers()).get("x-app-zone");
+  const hideChrome = zone === "insights";
 
   return (
     <>

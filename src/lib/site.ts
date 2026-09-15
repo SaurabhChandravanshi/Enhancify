@@ -51,31 +51,32 @@ export const site = {
       iosBundleId: "in.insightsapp",
       contactEmail: "support@enhancify.in",
       /**
-       * Play Store requires a dedicated URL for "Data safety → Account
-       * deletion" for any app that allows account creation. It must be
-       * accessible without signing in and must speak specifically about
-       * this app. We host it at the path below.
-       *
-       * Moved from `/apps/insights/policies/delete-account` on
-       * 2026-09-15 so the URL reads like a discoverable top-level
-       * action ("delete my account") rather than a policy sub-page.
-       * The old path is 308-redirected in `next.config.ts` so existing
-       * inbound links (Play Console, cached emails, released mobile
-       * builds) keep working.
+       * The Insights app has its own domain. `src/proxy.ts` serves the
+       * pages (physically implemented under `/apps/insights/*`) at the
+       * root of this host, and 308-redirects `enhancify.in/apps/insights/*`
+       * here so this domain is the single canonical home for the app.
        */
-      accountDeletionPath: "/apps/insights/account-deletion",
+      url: "https://insightsapp.in",
       /**
-       * Public help page for the Insights mobile app. Hosts the FAQ
-       * mirrored from in-app Help, an in-page contact form, and topic
-       * routing so the message we receive is Insights-scoped
-       * (`[Insights] Support: <topic>`) rather than colliding with the
-       * generic sales inbox at `/contact`.
+       * Clean, public-facing paths as seen on `insightsapp.in`. The pages
+       * live under `/apps/insights/*` and are mapped by the proxy; always
+       * link to these (not the internal `/apps/insights/*` paths) so the
+       * address bar stays clean on the app's own domain.
        *
-       * Referenced from the mobile app (`constants/legal-urls.ts` →
-       * HELP_CENTER_URL) so the "Account → Help → Help center" row
-       * lands on the same URL Play Console links to.
+       * External references use the full URLs, e.g. Play Store's "Data
+       * safety → Account deletion" field (`${url}${paths.deleteAccount}`)
+       * and the mobile app's Help center link (`${url}${paths.help}`).
+       * The old `enhancify.in/apps/insights/*` URLs keep working via the
+       * proxy redirect and the 308 in `next.config.ts`, so previously
+       * submitted URLs and released mobile builds don't break.
        */
-      helpPath: "/apps/insights/help",
+      paths: {
+        home: "/",
+        help: "/help",
+        privacy: "/policies/privacy",
+        terms: "/policies/terms",
+        deleteAccount: "/account-deletion",
+      },
       /** Human-readable date shown at the top of each policy document. */
       policiesLastUpdated: "September 14, 2026",
     },

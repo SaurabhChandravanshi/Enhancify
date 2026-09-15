@@ -43,6 +43,10 @@ const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${app.andr
  * page's own metadata export.
  */
 export const metadata: Metadata = {
+  // Insights lives on its own domain; resolve all relative canonical /
+  // Open Graph URLs against it (not the Enhancify metadataBase from the
+  // root layout). Nested Insights pages inherit this.
+  metadataBase: new URL(app.url),
   title: {
     default: `${app.name}: ${app.tagline}`,
     template: `%s · ${app.name}`,
@@ -57,6 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: app.name,
+    url: app.paths.home,
     title: `${app.name}: ${app.tagline}`,
     description: `${app.name} is a short-news app for India, quick reads of the day's important stories.`,
   },
@@ -88,7 +93,7 @@ function InsightsHeader() {
     <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6">
         <Link
-          href="/apps/insights"
+          href={app.paths.home}
           aria-label={`${app.name} home`}
           className="flex items-center gap-2.5"
         >
@@ -127,7 +132,7 @@ function InsightsFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 sm:px-6 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <Link
-            href="/apps/insights"
+            href={app.paths.home}
             className="flex items-center gap-2.5"
             aria-label={`${app.name} home`}
           >
@@ -144,9 +149,14 @@ function InsightsFooter() {
           </Link>
           <p className="mt-3 text-sm leading-6 text-slate-600">
             {app.tagline}. A short-read news app for India, built by {" "}
-            <Link className="underline hover:text-slate-900" href="/">
+            <a
+              className="underline hover:text-slate-900"
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Enhancify
-            </Link>
+            </a>
             .
           </p>
         </div>
@@ -156,15 +166,15 @@ function InsightsFooter() {
             <FooterLink href={PLAY_STORE_URL} external>
               Google Play
             </FooterLink>
-            <FooterLink href={app.helpPath}>Help &amp; support</FooterLink>
+            <FooterLink href={app.paths.help}>Help &amp; support</FooterLink>
           </FooterCol>
 
           <FooterCol title="Legal">
-            <FooterLink href="/apps/insights/policies/privacy">
+            <FooterLink href={app.paths.privacy}>
               Privacy
             </FooterLink>
-            <FooterLink href="/apps/insights/policies/terms">Terms</FooterLink>
-            <FooterLink href={app.accountDeletionPath}>
+            <FooterLink href={app.paths.terms}>Terms</FooterLink>
+            <FooterLink href={app.paths.deleteAccount}>
               Delete account
             </FooterLink>
           </FooterCol>
