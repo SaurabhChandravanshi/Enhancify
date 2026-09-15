@@ -38,7 +38,13 @@ export const site = {
   apps: {
     insights: {
       name: "Insights",
-      tagline: "Your signal, not the noise",
+      // Short, concrete positioning. Keeps the marketing hero, mobile
+      // auth screen, and OG/Twitter cards aligned on the same "short
+      // news" promise. Deliberately avoids brand-y abstractions
+      // ("your signal, not the noise") and implementation-speak
+      // ("bilingual", "AI-generated") — end users just want to know
+      // what the app does.
+      tagline: "News, in short",
       /** Android applicationId — Play Console listing */
       androidPackage: "in.insightsapp",
       /** iOS bundle identifier — App Store listing (when we ship) */
@@ -49,8 +55,27 @@ export const site = {
        * deletion" for any app that allows account creation. It must be
        * accessible without signing in and must speak specifically about
        * this app. We host it at the path below.
+       *
+       * Moved from `/apps/insights/policies/delete-account` on
+       * 2026-09-15 so the URL reads like a discoverable top-level
+       * action ("delete my account") rather than a policy sub-page.
+       * The old path is 308-redirected in `next.config.ts` so existing
+       * inbound links (Play Console, cached emails, released mobile
+       * builds) keep working.
        */
-      accountDeletionPath: "/apps/insights/policies/delete-account",
+      accountDeletionPath: "/apps/insights/account-deletion",
+      /**
+       * Public help page for the Insights mobile app. Hosts the FAQ
+       * mirrored from in-app Help, an in-page contact form, and topic
+       * routing so the message we receive is Insights-scoped
+       * (`[Insights] Support: <topic>`) rather than colliding with the
+       * generic sales inbox at `/contact`.
+       *
+       * Referenced from the mobile app (`constants/legal-urls.ts` →
+       * HELP_CENTER_URL) so the "Account → Help → Help center" row
+       * lands on the same URL Play Console links to.
+       */
+      helpPath: "/apps/insights/help",
       /** Human-readable date shown at the top of each policy document. */
       policiesLastUpdated: "September 14, 2026",
     },

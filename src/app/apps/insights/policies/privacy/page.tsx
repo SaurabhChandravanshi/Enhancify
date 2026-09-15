@@ -72,7 +72,7 @@ export default function InsightsPrivacyPage() {
             </li>
             <li>
               You can request deletion of your account and everything tied
-              to it at any time — see {" "}
+              to it at any time. See {" "}
               <Link
                 href={app.accountDeletionPath}
                 className="text-ink underline"
@@ -115,8 +115,8 @@ export default function InsightsPrivacyPage() {
           </ul>
 
           <p>
-            <strong>We also collect basic technical information</strong> —
-            error reports and request timestamps — which we use to keep the
+            <strong>We also collect basic technical information</strong>:
+            error reports and request timestamps, which we use to keep the
             app running reliably. These are not linked to advertising and
             are not shared with third parties for marketing.
           </p>
@@ -152,7 +152,7 @@ export default function InsightsPrivacyPage() {
             illustrative image, we send the article&rsquo;s title and short
             description to an AI provider. <strong>We do not send any of
             your personal information to the AI provider or to news
-            sources</strong> — only the news content itself.
+            sources</strong>. Only the news content itself.
           </p>
 
           <h2 className="text-lg font-semibold text-ink">Who else handles your data</h2>
@@ -162,20 +162,20 @@ export default function InsightsPrivacyPage() {
           </p>
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <strong>Google Firebase</strong> — for sign-in, storing your
+              <strong>Google Firebase</strong>: for sign-in, storing your
               profile, saving generated images, and delivering push
               notifications.
             </li>
             <li>
-              <strong>Google Sign-in</strong> — only if you choose it as a
+              <strong>Google Sign-in</strong>: only if you choose it as a
               sign-in method.
             </li>
             <li>
-              <strong>OpenAI</strong> — for summarising and illustrating
+              <strong>OpenAI</strong>: for summarising and illustrating
               news articles. Personal information is not sent to OpenAI.
             </li>
             <li>
-              <strong>News providers</strong> — the app fetches article
+              <strong>News providers</strong>: the app fetches article
               headlines and summaries from public news feeds. These
               providers do not receive any of your personal information.
             </li>

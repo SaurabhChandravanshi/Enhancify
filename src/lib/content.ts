@@ -151,3 +151,26 @@ export const contactNeeds = [
   { value: "application", label: "Application" },
   { value: "other", label: "Something else" },
 ] as const;
+
+/**
+ * Topic dropdown options for the Insights app help form at
+ * `/apps/insights/help`. Mirrors the categories the mobile app exposes
+ * ("Report an issue", "Feature request", …) plus a few web-only
+ * catchalls so users landing on this page from Play Console can also
+ * self-select. Values are stable identifiers echoed into the outgoing
+ * email subject; labels are user-facing.
+ *
+ * Keeping this next to `contactNeeds` (rather than in `site.ts` or a
+ * new file) so anyone editing form copy for either surface hits one
+ * spot; both are pure UI content.
+ */
+export const insightsHelpTopics = [
+  { value: "general", label: "General question" },
+  { value: "account", label: "Account (sign-in, sign-up, password)" },
+  { value: "notifications", label: "Notifications not working" },
+  { value: "bug", label: "Bug in the app" },
+  { value: "content", label: "Content feedback (wrong info, missing story)" },
+  { value: "feature", label: "Feature request" },
+  { value: "delete-account", label: "Delete my account" },
+  { value: "other", label: "Something else" },
+] as const;

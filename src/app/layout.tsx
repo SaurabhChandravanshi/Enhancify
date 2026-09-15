@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { WhatsAppButton } from "@/components/whatsapp-button";
+import { SiteChrome } from "@/components/site-chrome";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -106,10 +104,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-        <WhatsAppButton />
+        {/* Route-aware header/footer/CTA — see components/site-chrome.tsx.
+            Marketing routes get the Enhancify chrome; `/apps/<slug>/*`
+            routes get their own per-app chrome from a nested layout. */}
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

@@ -57,7 +57,7 @@ export default function InsightsTermsPage() {
             your credentials secure. We may suspend or terminate an
             account that abuses the service or violates these Terms. You
             may request deletion of your account and associated data at
-            any time — see {" "}
+            any time. See {" "}
             <Link
               href={app.accountDeletionPath}
               className="text-ink underline"
@@ -103,7 +103,7 @@ export default function InsightsTermsPage() {
             third-party news providers and remain the property of their
             respective owners. Our short AI-generated summaries are
             provided for convenience and reflect the source article at the
-            moment of ingestion — they may be inaccurate, out of date, or
+            moment of ingestion. They may be inaccurate, out of date, or
             miss context. Always click through to the original publisher
             for the authoritative version of a story.
           </p>

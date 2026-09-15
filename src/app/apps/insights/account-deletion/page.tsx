@@ -12,9 +12,12 @@ import { site } from "@/lib/site";
  *   specifically about the app (name + developer), and must describe
  *   what will be deleted, what may be retained, and the timeline.
  *
- *   The path here (`/apps/insights/policies/delete-account`) is
- *   referenced from `site.ts` so the privacy policy and Play Console
- *   listing share a single source of truth.
+ *   The path here (`/apps/insights/account-deletion`) is referenced
+ *   from `site.ts` (`app.accountDeletionPath`) so the privacy policy,
+ *   Play Console, and the mobile app's "Delete account" row all share
+ *   a single source of truth. The old `/apps/insights/policies/…`
+ *   URL is 308-redirected in `next.config.ts` so previously-submitted
+ *   Play Console URLs and any released mobile builds keep working.
  *
  * Current mechanism:
  *   Insights does not (yet) expose an in-app "Delete account" button.
@@ -95,7 +98,7 @@ export default function InsightsDeleteAccountPage() {
           <ul className="list-disc space-y-2 pl-5">
             <li>
               Basic technical logs (request timestamps, error stack
-              traces) — retained for the default period set by our hosting
+              traces), retained for the default period set by our hosting
               provider (currently 30 days), then rotated out automatically.
               These logs are not linked to advertising and are not shared
               for marketing.
