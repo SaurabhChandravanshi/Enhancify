@@ -41,14 +41,6 @@ const INSIGHTS_BASE = "/apps/insights";
 // Canonical public origin for the Insights app.
 const INSIGHTS_ORIGIN = "https://insightsapp.in";
 
-// Short "get the app" link. `/get` jumps straight to the Play Store
-// listing (Android applicationId `in.insightsapp`, see
-// `site.apps.insights.androidPackage`). Kept as a literal here so the
-// proxy stays free of shared-module imports.
-const GET_APP_PATH = "/get";
-const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=in.insightsapp";
-
 // Request header used to tell the app it's rendering in the Insights zone.
 const ZONE_HEADER = "x-app-zone";
 const INSIGHTS_ZONE = "insights";
@@ -66,13 +58,13 @@ export function proxy(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  // `/get` → Play Store listing. Handled first (host-agnostic) so the
-  // shortlink works on the app domain (`insightsapp.in/get`) and is easy
-  // to test locally. Temporary redirect: the destination may change
-  // (e.g. a country-specific or smart-banner link) without stale caches.
-  if (pathname === GET_APP_PATH || pathname === `${GET_APP_PATH}/`) {
-    return NextResponse.redirect(PLAY_STORE_URL, 307);
-  }
+  // NOTE: `/get` (the "get the app" shortlink) is intentionally *not*
+  // redirected here anymore. A bare proxy redirect never carries Open
+  // Graph tags, so shared links only ever unfurled the Play Store's
+  // generic preview. It's now a real page at `/apps/insights/get`
+  // (reached via the Insights-host rewrite below) that serves a branded
+  // OG card to social crawlers and server-redirects real visitors to the
+  // Play Store. See `app/apps/insights/get/page.tsx`.
 
   // Start from a clean header set and never trust an inbound zone header
   // (a client could try to spoof it to hide/show chrome).
