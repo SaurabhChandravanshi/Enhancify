@@ -153,6 +153,10 @@ function Hero() {
                   src: "/apps/insights/screenshots/03-account.png",
                   alt: `${app.name} account and preferences`,
                 },
+                {
+                  src: "/apps/insights/screenshots/04-local.png",
+                  alt: `${app.name} local news view`,
+                },
               ]}
             />
             {/* Subtle behind-phone accent */}
@@ -247,6 +251,10 @@ function ScreenshotsStrip() {
       src: "/apps/insights/screenshots/03-account.png",
       alt: "Account and preferences",
     },
+    {
+      src: "/apps/insights/screenshots/04-local.png",
+      alt: "Local news near you",
+    },
   ];
   return (
     <section className="border-t border-slate-100 bg-white">
@@ -260,7 +268,7 @@ function ScreenshotsStrip() {
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {shots.map((s) => (
             <div key={s.src} className="flex justify-center">
               <PhoneFrame src={s.src} alt={s.alt} />
