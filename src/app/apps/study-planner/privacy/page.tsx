@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Study Planner Privacy Policy",
   description:
     "How the Study Planner Android app handles your information. It collects no personal data and keeps your plan on your device.",
-  alternates: { canonical: "/study-planner/privacy" },
+  alternates: { canonical: "/apps/study-planner/privacy" },
 };
 
 export default function StudyPlannerPrivacyPage() {
