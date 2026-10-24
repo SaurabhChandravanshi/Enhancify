@@ -16,6 +16,7 @@ const routes: Entry[] = [
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/study-planner/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/country-population/privacy", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/apps/qr-code-maker/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];
 
