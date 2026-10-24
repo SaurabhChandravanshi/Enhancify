@@ -19,6 +19,7 @@ const routes: Entry[] = [
   { path: "/apps/qr-code-maker/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/unit-converter/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/age-date-calculator/privacy", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/apps/number-to-words/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];
 
