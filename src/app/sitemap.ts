@@ -21,6 +21,7 @@ const routes: Entry[] = [
   { path: "/apps/age-date-calculator/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/number-to-words/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/simple-todo/privacy", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/apps/world-clock/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];
 
