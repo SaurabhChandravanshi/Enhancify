@@ -17,10 +17,6 @@ const routes: Entry[] = [
   { path: "/apps/study-planner/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/country-population/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/qr-code-maker/privacy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/apps/unit-converter/privacy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/apps/age-date-calculator/privacy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/apps/number-to-words/privacy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/apps/simple-todo/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/apps/world-clock/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];
